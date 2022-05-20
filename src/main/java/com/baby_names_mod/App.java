@@ -43,6 +43,8 @@ public final class App {
      */
     private static void loadDatabase(final Firestore db) throws IOException, InterruptedException, ExecutionException {
         final LinkedList<PersonData> data = loadData();
+        // We can't have more than 500 documents in a batch.
+        // This partitions it.
         final List<List<PersonData>> chunks = Lists.partition(data, 500);
         for (final List<PersonData> _data : chunks) {
             final WriteBatch batch = db.batch();
