@@ -38,8 +38,8 @@ public final class App {
      * 
      * @param db The database to populate.
      * @throws IOException          An exception if the names.csv file isn't found.
-     * @throws ExecutionException
-     * @throws InterruptedException
+     * @throws ExecutionException   Shouldn't happen.
+     * @throws InterruptedException Shouldn't happen.
      */
     private static void loadDatabase(final Firestore db) throws IOException, InterruptedException, ExecutionException {
         final LinkedList<PersonData> data = loadData();
